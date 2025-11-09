@@ -1,3 +1,39 @@
+server:
+  port: 8080
+
 spring:
   application:
-    name: swapi
+    name: swapi-service
+
+  datasource:
+    url: jdbc:h2:mem:swapi-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+  h2:
+    console:
+      enabled: true
+
+  webflux:
+    base-path: /
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+jwt:
+  secret: "429045726c1e37f3a9a72f66e9b32ebead2b5db081eef80231c720488102d605"
+  expiration: 3600000
