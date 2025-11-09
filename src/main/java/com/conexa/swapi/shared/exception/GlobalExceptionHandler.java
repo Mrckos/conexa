@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
      * - Retorna HTTP 200 porque la app decide el resultado a partir del "code"
      */
     @ExceptionHandler(BaseException.class)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public BaseResponse handleBaseException(BaseException ex) {
         return new BaseResponse(ex.getCode(), ex.getMessage());
     }
