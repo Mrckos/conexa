@@ -241,9 +241,9 @@ Authorization: Bearer <token>
 
 Mismo endpoint, usando `id` como query param. Prioriza `id` sobre paginación.
 
-| Método | Path | Query params | Descripción | Respuesta |
-|---|---|---|---|---|
-| `GET` | `/api/{resource}` | `id` | Obtiene 1 entidad por ID | `SwapiItemResponse` |
+| Método | Path              | Query params | Descripción              | Respuesta           |
+|--------|-------------------|--------------|--------------------------|---------------------|
+| `GET`  | `/api/{resource}` | `id`         | Obtiene 1 entidad por ID | `SwapiItemResponse` |
 
 **Ejemplo**
 
@@ -267,16 +267,16 @@ Authorization: Bearer <token>
 
 ## Códigos de resultado y errores
 
-| Código | Mensaje | Cuándo |
-|---|---|---|
-| `0` | OK | Operación exitosa |
-| `1` | El usuario ya existe | `/auth/register` con username repetido |
-| `2` | Usuario no encontrado | `/auth/login` username inexistente |
-| `3` | Password incorrecto | `/auth/login` password inválida |
-| `4` | No se encontró el ID | `/api/**?id=` con ID inválido |
-| `6` | El recurso no soporta paginación o no hay resultados | `/api/{resource}` cuando SWAPI no devuelve `results` |
-| `7` | La página solicitada está fuera de rango | `/api/films` paginación local sin items |
-| `9` | error inesperado en el sistema, revisar en consola | Excepción no controlada (fallback) |
+| Código | Mensaje                                              | Cuándo                                               |
+|--------|------------------------------------------------------|------------------------------------------------------|
+| `0`    | OK                                                   | Operación exitosa                                    |
+| `1`    | El usuario ya existe                                 | `/auth/register` con username repetido               |
+| `2`    | Usuario no encontrado                                | `/auth/login` username inexistente                   |
+| `3`    | Password incorrecto                                  | `/auth/login` password inválida                      |
+| `4`    | No se encontró el ID                                 | `/api/**?id=` con ID inválido                        |
+| `6`    | El recurso no soporta paginación o no hay resultados | `/api/{resource}` cuando SWAPI no devuelve `results` |
+| `7`    | La página solicitada está fuera de rango             | `/api/films` paginación local sin items              |
+| `9`    | error inesperado en el sistema, revisar en consola   | Excepción no controlada (fallback)                   |
 
 > Todas las respuestas **extienden** de `BaseResponse`.
 > - Paginadas: `BasePagResponse<T>` agrega `page`, `size`, `total`, `items`.

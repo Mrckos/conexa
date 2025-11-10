@@ -1,7 +1,9 @@
 package com.conexa.swapi.shared.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+@Schema(description = "Respuesta base")
 @Getter
 @Setter
 @NoArgsConstructor

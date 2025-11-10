@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
@@ -35,5 +35,5 @@ springdoc:
     enabled: true
 
 jwt:
-  secret: "429045726c1e37f3a9a72f66e9b32ebead2b5db081eef80231c720488102d605"
+  secret: ${JWT_SECRET}
   expiration: 3600000
