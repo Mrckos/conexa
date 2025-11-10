@@ -35,5 +35,5 @@ springdoc:
     enabled: true
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:578d4587a914bdf230f3c40f36cb2ec1772e9e441f5f41e93b80f6de036cef41}
   expiration: 3600000
