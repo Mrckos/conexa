@@ -325,3 +325,42 @@ mvn -q -Dtest=SwapiServiceTest test
 ---
 
 ## Deploy en Render
+
+Base URL:
+
+```
+https://conexa-v3lc.onrender.com
+```
+
+⚠️ Algunos proveedores tardan unos segundos en despertar cuando la app está inactiva.
+
+# ✅ Cómo probar en Postman
+
+### 1) Registrar usuario
+POST → `/auth/register`  
+Guardar token.
+
+### 2) Login (si ya existe)
+POST → `/auth/login`  
+Guardar token.
+
+### 3) Agregar Header
+```
+Authorization: Bearer <TOKEN>
+```
+
+### 4) Probar SWAPI
+```
+GET /api/people
+```
+```
+GET /api/people?id=1
+```
+```
+GET /api/films?page=2&size=2
+```
+```
+GET /api/starships?name=wing
+```
+
+---
